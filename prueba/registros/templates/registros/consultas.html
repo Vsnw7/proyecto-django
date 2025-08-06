@@ -1,15 +1,15 @@
 {% extends "inicio/encabezado.html" %}
 
-{% block titulo %} Principal {% endblock %}
+{% block titulo %} Consultas {% endblock %}
 
-{% block imagen %}
+{% block imagen %} 
     {% load static %}
     {% static 'inicio/images/home.png' %}
 {% endblock %}
 
-{% block texto %} Principal {% endblock %}
+{% block texto %} Consultas {% endblock %}
 
-{% block span %} DSM {% endblock %}
+{% block span %}  {% endblock %}
 
 {% block contenido %}
 
@@ -17,7 +17,7 @@
 <div class="page-header">
 	<div class="page-title">
 		<h3>Alumnos
-			<small>Lista de alumnos</small>
+			<small>Consultas</small>
 		</h3>
 	</div>
 </div>
@@ -52,15 +52,17 @@
 	</thead>
 
 	<tbody>
+		{% for alumno in alumnos %}
 		<tr>
 			<td class="text-center">
-				<img src="" alt="" class"img-media">
+				<img src="{{alumno.imagen.url}}" alt="" class"img-media" height="60px" width="60px">
 			</td>
-			<td class="text-semibold">UTM221032TI</td>
-			<td class="muted">Vanessa</td>
-			<td class="muted">TIC</td>
-			<td class="muted">Matituno</td>
+			<td class="text-semibold">{{alumno.matricula}}</td>
+			<td class="muted">{{alumno.nombre}}</td>
+			<td class="muted">{{alumno.carrera}}</td>
+			<td class="muted">{{alumno.turno}}</td>
 		<tr>
+		{% endfor %}
 	</tbody>
 </table>
 

@@ -2,7 +2,7 @@
 
 {% block titulo %} Principal {% endblock %}
 
-{% block imagen %}
+{% block imagen %} 
     {% load static %}
     {% static 'inicio/images/home.png' %}
 {% endblock %}
@@ -39,6 +39,14 @@
 {% endblock %}
 <!-- /Navegación -->
 
+
+<!-- Formulario para la barra de busqueda -->
+<form method="get" action="">
+    <input type="text" name="q" placeholder=" 🔍 Buscar alumno por nombre o matrícula" value="{{ query|default:'' }}" class="form-control" style="margin-bottom: 15px;">
+</form>
+
+
+
 <!-- Tabla de alumnos -->
 <table class="table table-bordered table-striped">
 	<thead>
@@ -52,15 +60,17 @@
 	</thead>
 
 	<tbody>
+		{% for alumno in alumnos %}
 		<tr>
 			<td class="text-center">
-				<img src="" alt="" class"img-media">
+				<img src="{{alumno.imagen.url}}" alt="" class"img-media" height="60px" width="60px">
 			</td>
-			<td class="text-semibold">UTM221032TI</td>
-			<td class="muted">Vanessa</td>
-			<td class="muted">TIC</td>
-			<td class="muted">Matituno</td>
+			<td class="text-semibold">{{alumno.matricula}}</td>
+			<td class="muted">{{alumno.nombre}}</td>
+			<td class="muted">{{alumno.carrera}}</td>
+			<td class="muted">{{alumno.turno}}</td>
 		<tr>
+		{% endfor %}
 	</tbody>
 </table>
 

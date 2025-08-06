@@ -1,13 +1,13 @@
 {% extends "inicio/encabezado.html" %}
 
-{% block titulo %} Principal {% endblock %}
+{% block titulo %} Comentarios {% endblock %}
 
-{% block imagen %}
+{% block imagen %} 
     {% load static %}
-    {% static 'inicio/images/home.png' %}
+    {% static 'inicio/images/comentarios.png' %}
 {% endblock %}
 
-{% block texto %} Principal {% endblock %}
+{% block texto %} Comentarios {% endblock %}
 
 {% block span %} DSM {% endblock %}
 
@@ -16,8 +16,8 @@
 <!--Encabezdo -->
 <div class="page-header">
 	<div class="page-title">
-		<h3>Alumnos
-			<small>Lista de alumnos</small>
+		<h3>Comentarios
+			<small>Lista de comentarios</small>
 		</h3>
 	</div>
 </div>
@@ -43,24 +43,22 @@
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
-			<th>Foto</th>
-			<th>Matrícula</th>
-			<th>Nombre</th>
-			<th>Carrera</th>
-			<th>Turno</th>
+			<th>Usuario</th>
+			<th>Mensaje</th>
+			<th>Editar</th>
+			<th>Eliminar</th>
 		</tr>
 	</thead>
 
 	<tbody>
+		<!-- {% for comentario in comentarios %}-->
 		<tr>
-			<td class="text-center">
-				<img src="" alt="" class"img-media">
-			</td>
-			<td class="text-semibold">UTM221032TI</td>
-			<td class="muted">Vanessa</td>
-			<td class="muted">TIC</td>
-			<td class="muted">Matituno</td>
+			<td class="text-semibold">Usuario</td>
+			<td class="muted">Mensaje</td>
+			<td class="muted"></td>
+			<td class="muted"></td>
 		<tr>
+		<!--{% endfor %}-->
 	</tbody>
 </table>
 
